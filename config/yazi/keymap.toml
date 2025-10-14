@@ -19,3 +19,8 @@ block = true
 [[open.prepend_rules]]
 name = "bulk-rename.txt"
 use  = "bulk-rename"
+
+[[input.prepend_keymap]]
+on   = "<Esc>"
+run  = "close"
+desc = "Cancel input"
