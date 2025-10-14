@@ -10,3 +10,6 @@ language-servers = ["emmet-lsp"]
 [[language]]
 name = "markdown"
 language-servers = ["marksman"]
+soft-wrap.enable	= true
+soft-wrap.wrap-at-text-width = true
+soft-wrap.wrap-indicator = ""
