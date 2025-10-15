@@ -8,6 +8,10 @@ roots = [".git"]
 language-servers = ["emmet-lsp"]
 
 [[language]]
+name = "javascript"
+language-servers = ["typescript-language-server"]
+
+[[language]]
 name = "markdown"
 language-servers = ["marksman"]
 soft-wrap.enable	= true
