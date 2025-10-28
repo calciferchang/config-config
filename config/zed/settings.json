@@ -7,7 +7,6 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "helix_mode": false,
   "minimum_contrast_for_highlights": 44.0,
   "ui_font_family": ".ZedSans",
   "buffer_font_family": "JetBrainsMono Nerd Font",
@@ -20,7 +19,7 @@
   "buffer_font_size": 12.0,
   "theme": {
     "mode": "system",
-    "light": "Kanso Pearl (No italics)",
+    "light": "Kanso Pearl",
     "dark": "Tomorrow Night"
   },
   "tab_size": 2,
@@ -29,5 +28,13 @@
   },
   "vim": {
     "use_system_clipboard": "on_yank"
+  },
+  "auto_install_extensions": {
+    "html": true,
+    "git-firefly": true,
+    "astro": true,
+    "emmet": true,
+    "tomorrow-theme": true,
+    "kanso": true
   }
 }
