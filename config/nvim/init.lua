@@ -72,8 +72,7 @@ MiniDeps.setup({
   },
 })
 
--- MiniDeps.add('rktjmp/lush.nvim')
-MiniDeps.add('idr4n/github-monochrome.nvim')
+MiniDeps.add('kepano/flexoki-neovim')
 MiniDeps.add('f-person/auto-dark-mode.nvim')
 MiniDeps.add('folke/which-key.nvim')
 MiniDeps.add({
@@ -81,7 +80,7 @@ MiniDeps.add({
   checkout = mini.branch,
 })
 
-
+MiniDeps.add('nvim-mini/mini.misc')
 MiniDeps.add('neovim/nvim-lspconfig')
 MiniDeps.add({
 	source = 'nvim-treesitter/nvim-treesitter',
@@ -100,14 +99,18 @@ MiniDeps.add({
 -- Auto dark mode color schemes
 require('auto-dark-mode').setup({
  set_dark_mode = function()
-    vim.cmd.colorscheme('github-monochrome-dark')
+    vim.cmd.colorscheme('flexoki-dark')
   end,
   set_light_mode = function()
-    vim.cmd.colorscheme('github-monochrome-light')
+    vim.cmd.colorscheme('flexoki-light')
   end,
   update_interval = 2500,
   fallback = "dark"
 })
+
+-- Enable auto chdir using mini.misc
+require('mini.misc').setup()
+MiniMisc.setup_auto_root()
 
 -- See :help MiniIcons.config
 require('mini.icons').setup({style = 'glyph'})
@@ -255,5 +258,25 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- ========================================================================== --
 -- ==                           LSP CONFIGURATION                          == --
 -- ========================================================================== --
+vim.lsp.config('superhtml', {
+  filetypes = { 'superhtml' }
+})
+vim.lsp.enable('superhtml')
 
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+vim.lsp.config('cssls', {
+  capabilities = capabilities,
+})
+vim.lsp.enable('cssls')
+vim.lsp.enable('css_variables')
+
+vim.lsp.config('ts_ls', {
+	completions = {
+      completeFunctionCalls = true
+    }
+	})
 vim.lsp.enable('ts_ls')
+vim.lsp.enable('mdx_analyzer')
