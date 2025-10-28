@@ -1,0 +1,57 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "features": {
+    "edit_prediction_provider": "none"
+  },
+  "vim_mode": false,
+  "base_keymap": "SublimeText",
+  "ui_font_size": 16,
+  "buffer_font_size": 12.0,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "buffer_font_features": {
+    "calt": false
+  },
+  "agent": {
+    "enabled": false,
+    "version": "2"
+  },
+  "language_models": {
+    "anthropic": {
+      "version": "1",
+      "api_url": ""
+    },
+    "google": {
+      "api_url": ""
+    },
+    "ollama": {
+      "api_url": ""
+    },
+    "openai": {
+      "version": "1",
+      "api_url": ""
+    },
+    "open_router": {
+      "api_url": ""
+    },
+    "lmstudio": {
+      "api_url": ""
+    },
+    "deepseek": {
+      "api_url": ""
+    },
+    "mistral": {
+      "api_url": ""
+    }
+  }
+}
